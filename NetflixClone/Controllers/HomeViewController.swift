@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    let sectionTitles : [String] = ["Trending Movies","Trending TV","Upcıming Movies","Top Rated"]
+    
     
     //MARK: TableView Setup
     private let homeFeedTable: UITableView = {
@@ -29,6 +31,9 @@ class HomeViewController: UIViewController {
         homeFeedTable.dataSource = self
         
         
+        // Configure Navbar
+        configureNavBar()
+        
         
         // Adding HeaderView to the tableview's header section
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
@@ -42,6 +47,20 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     
+    
+    //MARK: Configure Navbar
+    private func configureNavBar(){
+        var image = UIImage(named: "netflixLogo")
+        image = image?.withRenderingMode(.alwaysOriginal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: nil)
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
+        ]
+        
+        
+        navigationController?.navigationBar.tintColor = .white
+    }
     
     
 
@@ -75,4 +94,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
+    
+    
+    // Navigation Bar sticks on top when scrolling
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let defaultOffset = view.safeAreaInsets.top
+        let offset = scrollView.contentOffset.y + defaultOffset
+        
+        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
+    }
+    
+    
 }
