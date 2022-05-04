@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let sectionTitles : [String] = ["TRENDING MOVIES","POPULAR", "TRENDING TV","UPCOMING MOVIES","TOP RATED"]
+    let sectionTitles : [String] = ["TRENDING MOVIES","TRENDING TV","POPULAR", "UPCOMING MOVIES","TOP RATED"]
     
     
     //MARK: TableView Setup
@@ -38,6 +38,10 @@ class HomeViewController: UIViewController {
         // Adding HeaderView to the tableview's header section
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
+        
+        
+        getTrendingMovies()
+        
     }
     
 
@@ -46,6 +50,20 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
     }
+    
+    // Test Function
+    private func getTrendingMovies(){
+        APICaller().getTrendingMovies { results in
+            switch results {
+            case .success(let movies):
+                print(movies)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    
     
     
     //MARK: Configure Navbar
@@ -105,7 +123,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         header.textLabel?.font = .systemFont(ofSize: 18,weight: .semibold)
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
         header.textLabel?.textColor = .white
-        
+        header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
         
     }
     

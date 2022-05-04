@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		514ED6DC2822C7C300463CF1 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514ED6DB2822C7C300463CF1 /* APICaller.swift */; };
+		514ED6DE2822CB2800463CF1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514ED6DD2822CB2700463CF1 /* Movie.swift */; };
+		514ED6E02822CED500463CF1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514ED6DF2822CED500463CF1 /* Extensions.swift */; };
+		514ED6E22822D24A00463CF1 /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514ED6E12822D24A00463CF1 /* TV.swift */; };
 		5195EFC32821D29900B4FED6 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195EFC22821D29900B4FED6 /* CollectionViewTableViewCell.swift */; };
 		51ACA2E12821639A002720A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ACA2E02821639A002720A2 /* AppDelegate.swift */; };
 		51ACA2E32821639A002720A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ACA2E22821639A002720A2 /* SceneDelegate.swift */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		514ED6DB2822C7C300463CF1 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		514ED6DD2822CB2700463CF1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		514ED6DF2822CED500463CF1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		514ED6E12822D24A00463CF1 /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
 		5195EFC22821D29900B4FED6 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		51ACA2DD2821639A002720A2 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51ACA2E02821639A002720A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +74,8 @@
 		5195EFBF2821D23600B4FED6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				514ED6DD2822CB2700463CF1 /* Movie.swift */,
+				514ED6E12822D24A00463CF1 /* TV.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -73,6 +83,7 @@
 		5195EFC02821D25900B4FED6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				514ED6DF2822CED500463CF1 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -80,6 +91,7 @@
 		5195EFC12821D25F00B4FED6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				514ED6DB2822C7C300463CF1 /* APICaller.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -201,13 +213,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				51ACA2FA2821699B002720A2 /* SearchViewController.swift in Sources */,
+				514ED6E22822D24A00463CF1 /* TV.swift in Sources */,
 				51ACA2E52821639A002720A2 /* MainTabBarViewController.swift in Sources */,
 				5195EFC32821D29900B4FED6 /* CollectionViewTableViewCell.swift in Sources */,
+				514ED6DC2822C7C300463CF1 /* APICaller.swift in Sources */,
 				51DC203F28227F9000012549 /* HeroHeaderUIView.swift in Sources */,
 				51ACA2FC282169B6002720A2 /* DownloadsViewController.swift in Sources */,
 				51ACA2E12821639A002720A2 /* AppDelegate.swift in Sources */,
+				514ED6E02822CED500463CF1 /* Extensions.swift in Sources */,
 				51ACA2E32821639A002720A2 /* SceneDelegate.swift in Sources */,
 				51ACA2F828216951002720A2 /* UpcomingViewController.swift in Sources */,
+				514ED6DE2822CB2800463CF1 /* Movie.swift in Sources */,
 				51ACA2F628216915002720A2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
