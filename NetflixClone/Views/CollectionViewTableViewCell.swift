@@ -9,6 +9,7 @@ import UIKit
 
 class CollectionViewTableViewCell: UITableViewCell {
 
+    //MARK: CollectionView Setup
     static let identifier = "CollectionViewTableViewCell"
     
     
@@ -21,6 +22,8 @@ class CollectionViewTableViewCell: UITableViewCell {
         return collectionView
     }()
     
+    
+    //MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .systemPink
@@ -41,6 +44,8 @@ class CollectionViewTableViewCell: UITableViewCell {
 
 }
 
+
+//MARK: CollectionView Delegate and DataSource
 
 extension CollectionViewTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource {
     
