@@ -50,8 +50,6 @@ class HomeViewController: UIViewController {
         homeFeedTable.tableHeaderView = headerView
         
         
-        
-        
     }
     
 
