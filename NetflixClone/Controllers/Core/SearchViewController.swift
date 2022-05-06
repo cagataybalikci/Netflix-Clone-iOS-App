@@ -44,6 +44,8 @@ class SearchViewController: UIViewController {
         
         navigationItem.searchController = searchController
         navigationController?.navigationBar.tintColor = .white
+        
+        searchController.searchResultsUpdater = self
     }
     
 
@@ -89,4 +91,31 @@ extension SearchViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+}
+
+
+extension SearchViewController : UISearchResultsUpdating{
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        
+        guard let query = searchBar.text,
+              !query.trimmingCharacters(in: .whitespaces).isEmpty,
+              query.trimmingCharacters(in: .whitespaces).count >= 3,
+              let resultsController = searchController.searchResultsController as? SearchResultsViewController else {
+                  return
+              }
+        APICaller.shared.search(with: query) { results in
+            DispatchQueue.main.async {
+                switch results{
+                case .success(let titles):
+                    resultsController.titles = titles
+                    resultsController.searchResultsCollectionView.reloadData()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
 }
